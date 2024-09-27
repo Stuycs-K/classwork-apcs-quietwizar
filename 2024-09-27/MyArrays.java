@@ -10,10 +10,10 @@ ublic class MyArrays{
   }
   public static void main(String[] args){
     //test cases
-    int[] test1 = int[];
-    int[] test2 = int[0, 4, 23,19, 23];
-    int[] test3 = int[1];
-    int[] test4= int[1, 12];
+    int[] test1 = new int[]{};
+    int[] test2 = new int[]{0, 4, 23,19, 23};
+    int[] test3 = new int[]{1};
+    int[] test4= new int[]{1, 12};
     System.out.println("Original: [], Actual: "+ arrayToString(test1));
     System.out.println("Original: [0, 4, 23, 19, 23], Actual: "+ arrayToString(test2));
     System.out.println("Original: [1], Actual: "+ arrayToString(test3));
