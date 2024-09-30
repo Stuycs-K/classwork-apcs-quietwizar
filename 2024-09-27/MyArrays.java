@@ -31,6 +31,17 @@ public class MyArrays{
     return true;
   }
 
+  public static int[] concatArray(int[]ary1,int[]ary2){
+    int[] ary=new int[ary1.length+ary2.length];
+    for(int i=0; i<ary1.length; i++){
+      ary[i]=ary1[i];
+    }
+    for(int i=ary1.length; i<ary2.length; i++){
+      ary[i]=ary1[i-ary1.length];
+    }
+    return ary;
+  }
+
   public static void main(String[] args){
     //test cases
     int[] test1 = new int[]{};
@@ -46,5 +57,11 @@ public class MyArrays{
     System.out.println("Does it match: "+ arraychecker(test2,returnCopy(test2)));
     System.out.println("Does it match: "+ arraychecker(test3,returnCopy(test3)));
     System.out.println("Does it match: "+ arraychecker(test4,returnCopy(test4)));
+
+    System.out.println("Original: [] and [0, 4, 23, 19, 23], Concat: "+ concatArray(test1, test2));
+    System.out.println("Original: [0, 4, 23, 19, 23] and [1], Concat: "+ concatArray(test2, test3));
+    System.out.println("Original: [1] and [1,12], Concat: "+ concatArray(test3, test4));
+
+    
   }
 }
