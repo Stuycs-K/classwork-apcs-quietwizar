@@ -36,8 +36,8 @@ public class MyArrays{
     for(int i=0; i<ary1.length; i++){
       ary[i]=ary1[i];
     }
-    for(int i=ary1.length; i<ary2.length; i++){
-      ary[i]=ary2[i-ary1.length];
+    for(int i=0; i<ary2.length; i++){
+      ary[ary1.length+i]=ary2[i];
     }
     return ary;
   }
