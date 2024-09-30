@@ -19,6 +19,18 @@ public class MyArrays{
     return arr;
   }
 
+  public static boolean arraychecker(int[]a, int[]b){
+    if(a.length!=b.length){
+      return false;
+    }
+    for(int i=0; i<arr.length); i++){
+      if (a[i]!=a[b]){
+        return false;
+      }
+    }
+    return true;
+  }
+
   public static void main(String[] args){
     //test cases
     int[] test1 = new int[]{};
@@ -30,9 +42,9 @@ public class MyArrays{
     System.out.println("Original: [1], Actual: "+ arrayToString(test3));
     System.out.println("Original: [1,12], Actual: "+ arrayToString(test4));
 
-    System.out.println("Original: [], Actual: "+ returnCopy(test1));
-    System.out.println("Original: [0, 4, 23, 19, 23], Actual: "+ returnCopy(test2));
-    System.out.println("Original: [1], Actual: "+ returnCopy(test3));
-    System.out.println("Original: [1,12], Actual: "+ returnCopy(test4));
+    System.out.println("Does it match: "+ arraychecker(test1, returnCopy(test1)));
+    System.out.println("Does it match: "+ arraychecker(test2,returnCopy(test2)));
+    System.out.println("Does it match: "+ arraychecker(test3,returnCopy(test3)));
+    System.out.println("Does it match: "+ arraychecker(test4,returnCopy(test4)));
   }
 }
