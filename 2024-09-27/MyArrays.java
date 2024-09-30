@@ -1,6 +1,9 @@
-ublic class MyArrays{
+public class MyArrays{
   public static String arrayToString(int[] nums){
     String arr="[";
+    if(nums.length==0){
+      return "[]";
+    }
     arr+=nums[0];
     for(int i=1; i<nums.length; i++){
     arr+=", "+nums[i];
