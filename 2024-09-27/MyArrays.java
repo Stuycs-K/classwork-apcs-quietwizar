@@ -12,7 +12,7 @@ public class MyArrays{
     return arr;
   }
   public static int[] returnCopy(int[]ary){
-    int[] arr=new int[ary.length]
+    int[] arr=new int[ary.length];
     for(int i=0; i<ary.length; i++){
       arr[i]=ary[i]
     }
@@ -23,8 +23,8 @@ public class MyArrays{
     if(a.length!=b.length){
       return false;
     }
-    for(int i=0; i<arr.length); i++){
-      if (a[i]!=a[b]){
+    for(int i=0; i<a.length; i++){
+      if (a[i]!=b[i]){
         return false;
       }
     }
