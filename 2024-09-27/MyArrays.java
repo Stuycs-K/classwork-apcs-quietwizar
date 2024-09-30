@@ -11,6 +11,14 @@ public class MyArrays{
     arr+="]";
     return arr;
   }
+  public static int[] returnCopy(int[]ary){
+    int[] arr=new int[ary.length]
+    for(int i=0; i<ary.length; i++){
+      arr[i]=ary[i]
+    }
+    return arr;
+  }
+
   public static void main(String[] args){
     //test cases
     int[] test1 = new int[]{};
@@ -21,5 +29,10 @@ public class MyArrays{
     System.out.println("Original: [0, 4, 23, 19, 23], Actual: "+ arrayToString(test2));
     System.out.println("Original: [1], Actual: "+ arrayToString(test3));
     System.out.println("Original: [1,12], Actual: "+ arrayToString(test4));
+
+    System.out.println("Original: [], Actual: "+ returnCopy(test1));
+    System.out.println("Original: [0, 4, 23, 19, 23], Actual: "+ returnCopy(test2));
+    System.out.println("Original: [1], Actual: "+ returnCopy(test3));
+    System.out.println("Original: [1,12], Actual: "+ returnCopy(test4));
   }
 }
