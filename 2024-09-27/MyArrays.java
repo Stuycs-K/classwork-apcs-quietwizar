@@ -14,7 +14,7 @@ public class MyArrays{
   public static int[] returnCopy(int[]ary){
     int[] arr=new int[ary.length];
     for(int i=0; i<ary.length; i++){
-      arr[i]=ary[i]
+      arr[i]=ary[i];
     }
     return arr;
   }
