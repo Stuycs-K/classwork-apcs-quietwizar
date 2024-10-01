@@ -19,8 +19,12 @@ public class ArrayMethods{
     String arr="[";
     for (int i = 0; i<ary.length; i++){
       arr+=arrToString(ary[i]);
+      if(i<ary.length-1){
+        arr+=", ";
+      }
     }
-    return "";
+    arr+="]";
+    return arr;
   }
 
   public static int[] returnCopy(int[]ary){
@@ -73,11 +77,11 @@ public class ArrayMethods{
     System.out.println("Does it match: "+ arraychecker(test3,returnCopy(test3)));
     System.out.println("Does it match: "+ arraychecker(test4,returnCopy(test4)));
 
-    System.out.println("Original: [] and [0, 4, 23, 19, 23], Concat: "+ arrayToString(concatArray(test1, test2)));
-    System.out.println("Original: [0, 4, 23, 19, 23] and [1], Concat: "+ arrayToString(concatArray(test2, test3)));
-    System.out.println("Original: [1] and [1,12], Concat: "+ arrayToString(concatArray(test3, test4)));
+    System.out.println("Original: [] and [0, 4, 23, 19, 23], Concat: "+ arrToString(concatArray(test1, test2)));
+    System.out.println("Original: [0, 4, 23, 19, 23] and [1], Concat: "+ arrToString(concatArray(test2, test3)));
+    System.out.println("Original: [1] and [1,12], Concat: "+ arrToString(concatArray(test3, test4)));
     System.out.println("[2, 3, 4, 9] vs" + arrToString(test5));
-    System.out.println("[[2, 3, 4], [5, 6, 7], [2, 4, 9]]" + arraytest6);
+    System.out.println("Original: [[2, 3, 4], [5, 6, 7], [2, 4, 9]], new: " + arrToString(test6));
 
 
 
