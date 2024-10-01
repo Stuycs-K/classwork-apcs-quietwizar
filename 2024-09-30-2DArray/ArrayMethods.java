@@ -58,15 +58,25 @@ public class ArrayMethods{
     return ary;
   }
 
-public static int arr2DSum(int[][]nums){
-  int sum=0;
-  for(int i=0; i<nums.length; i++){
-    for(int j=0; j<nums[i].length; j++){
-      sum+=nums[i][j];
+  public static int arr2DSum(int[][]nums){
+    int sum=0;
+    for(int i=0; i<nums.length; i++){
+      for(int j=0; j<nums[i].length; j++){
+        sum+=nums[i][j];
+      }
     }
+    return sum;
   }
-  return sum;
-}
+
+  public static int[][] swapRC(int[][]nums){
+    int[]swappedArray=new int[nums[0].length][nums.length];
+    for(int i=0; i<nums[0].length; i++){
+      for(int j=0; j<nums.length; j++){
+        swappedArray[j][i]=nums[i][j];
+      }
+    }
+    return swappedArray;
+  }
 
 
   public static void main(String[] args){
