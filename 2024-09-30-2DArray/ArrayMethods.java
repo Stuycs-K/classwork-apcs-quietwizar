@@ -69,9 +69,9 @@ public class ArrayMethods{
   }
 
   public static int[][] swapRC(int[][]nums){
-    int[]swappedArray=new int[nums[0].length][nums.length];
-    for(int i=0; i<nums[0].length; i++){
-      for(int j=0; j<nums.length; j++){
+    int[][]swappedArray=new int[nums[0].length][nums.length];
+    for(int i=0; i<nums.length; i++){
+      for(int j=0; j<nums[0].length; j++){
         swappedArray[j][i]=nums[i][j];
       }
     }
