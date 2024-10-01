@@ -58,6 +58,17 @@ public class ArrayMethods{
     return ary;
   }
 
+public static int arr2DSum(int[][]nums){
+  int sum=0;
+  for(int i=0; i<nums.length; i++){
+    for(int j=0; j<nums[i].length; j++){
+      sum+=nums[i][j];
+    }
+  }
+  return sum;
+}
+
+
   public static void main(String[] args){
     //test cases
     int[] test1 = new int[]{};
