@@ -89,6 +89,7 @@ public class ArrayMethods{
     int[][] test6= new int[][]{{2, 3, 4}, {5, 6, 7}, {2, 4, 9}};
     int[][] emptytest=new int[][]{{}};
     int[][] weirdtest=new int[][]{{3,7,4}, {2,1}, {}, {232}};
+    int[][] test7=new int[][]{{1,2,3},{4,5,6}};
 
 
     System.out.println("Original: [], Actual: "+ arrToString(test1));
@@ -109,6 +110,9 @@ public class ArrayMethods{
     System.out.println("Array sum of [[2, 3, 4], [5, 6, 7], [2, 4, 9]]: "+ arr2DSum(test6));
     System.out.println("Array sum of [[]]: "+ arr2DSum(emptytest));
     System.out.println("Array sum of [[3,7,4], [2,1], [], [232]]: "+ arr2DSum(weirdtest));
+
+    System.out.println("Swapped of [[2,3,4],[5,6,7][2,4,9]]: "+ arrToString(swapRC(test6)));
+    System.out.println("Swapped of [[1,2,3],[4,5,6]]: "+ arrToString(swapRC(test7)));
 
   }
 }
