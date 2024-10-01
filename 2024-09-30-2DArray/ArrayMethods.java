@@ -77,6 +77,9 @@ public static int arr2DSum(int[][]nums){
     int[] test4= new int[]{1, 12};
     int[] test5= new int[]{2, 3, 4, 9};
     int[][] test6= new int[][]{{2, 3, 4}, {5, 6, 7}, {2, 4, 9}};
+    int[][] emptytest=new int[][]{{}};
+    int[][] weirdtest=new int[][]{{3,7,4}, {2,1}, {}, {232}};
+
 
     System.out.println("Original: [], Actual: "+ arrToString(test1));
     System.out.println("Original: [0, 4, 23, 19, 23], Actual: "+ arrToString(test2));
@@ -93,8 +96,9 @@ public static int arr2DSum(int[][]nums){
     System.out.println("Original: [1] and [1,12], Concat: "+ arrToString(concatArray(test3, test4)));
     System.out.println("[2, 3, 4, 9] vs" + arrToString(test5));
     System.out.println("Original: [[2, 3, 4], [5, 6, 7], [2, 4, 9]], new: " + arrToString(test6));
-
-
+    System.out.println("Array sum of [[2, 3, 4], [5, 6, 7], [2, 4, 9]]: "+ arr2DSum(test6));
+    System.out.println("Array sum of [[]]: "+ arr2DSum(emptytest));
+    System.out.println("Array sum of [[3,7,4], [2,1], [], [232]]: "+ arr2DSum(weirdtest));
 
   }
 }
