@@ -86,14 +86,15 @@ public class ArrayMethods{
             vals[i][j] = 1;
           }
           else{
-            vals[i][j] == 0;
+            vals[i][j] = 0;
           }
         }
       }
     }
-    return vals;
-
+    System.out.println(vals);
   }
+
+
 
 
 
@@ -108,6 +109,7 @@ public class ArrayMethods{
     int[][] emptytest=new int[][]{{}};
     int[][] weirdtest=new int[][]{{3,7,4}, {2,1}, {}, {232}};
     int[][] test7=new int[][]{{1,2,3},{4,5,6}};
+    int[][] test8 = new int[][]{{},{-2,-4,-6},{4,-5},{1,4,7,-8}};
 
 
     System.out.println("Original: [], Actual: "+ arrToString(test1));
@@ -132,5 +134,7 @@ public class ArrayMethods{
     System.out.println("Swapped of [[2,3,4],[5,6,7][2,4,9]]: "+ arrToString(swapRC(test6)));
     System.out.println("Swapped of [[1,2,3],[4,5,6]]: "+ arrToString(swapRC(test7)));
 
+
+    System.out.println("Negative rmover:" +replaceNegative(test8));
   }
 }
