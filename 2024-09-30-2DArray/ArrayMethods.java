@@ -91,10 +91,17 @@ public class ArrayMethods{
         }
       }
     }
-    System.out.println(vals);
+    System.out.println(arrToString(vals));
   }
 
-
+  public static int[][] copy(int[][] nums){
+    int[] copyarray=new int[nums.length]
+    for (int i=0; i<nums.length; i++){
+      copyarray[i]=returnCopy(nums[i])
+    }
+  
+    return copyarray;
+  }
 
 
 
