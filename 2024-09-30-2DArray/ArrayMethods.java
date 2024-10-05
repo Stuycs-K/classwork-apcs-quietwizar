@@ -95,9 +95,9 @@ public class ArrayMethods{
   }
 
   public static int[][] copy(int[][] nums){
-    int[] copyarray=new int[nums.length]
+    int[][] copyarray=new int[nums.length][];
     for (int i=0; i<nums.length; i++){
-      copyarray[i]=returnCopy(nums[i])
+      copyarray[i]=returnCopy(nums[i]);
     }
   
     return copyarray;
@@ -117,6 +117,7 @@ public class ArrayMethods{
     int[][] weirdtest=new int[][]{{3,7,4}, {2,1}, {}, {232}};
     int[][] test7=new int[][]{{1,2,3},{4,5,6}};
     int[][] test8 = new int[][]{{},{-2,-4,-6},{4,-5},{1,4,7,-8}};
+    int[][] test9=new int[][]{{},{3,7,-4,6},{12,21},{201,22,-100}};
 
 
     System.out.println("Original: [], Actual: "+ arrToString(test1));
@@ -142,6 +143,7 @@ public class ArrayMethods{
     System.out.println("Swapped of [[1,2,3],[4,5,6]]: "+ arrToString(swapRC(test7)));
 
 
-    System.out.println("Negative rmover:" +replaceNegative(test8));
+    replaceNegative(test8);
+    System.out.println("Origional: {{},{3,7,-4,6},{12,21},{201,22,-100}}, copy= " + arrToString(copy(test9)));
   }
 }
