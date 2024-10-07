@@ -144,6 +144,9 @@ public class ArrayMethods{
 
 
     replaceNegative(test8);
-    System.out.println("Origional: {{},{3,7,-4,6},{12,21},{201,22,-100}}, copy= " + arrToString(copy(test9)));
+    String CopyTest=arrToString(copy(test9));
+    System.out.println("Origional: {{},{3,7,-4,6},{12,21},{201,22,-100}}, copy= " + CopyTest + "and the copied string: " + arrToString(test9));
+    test9[1][2]=0;
+    System.out.println("Check copy chage: " + arrToString(test9) + " vs " + CopyTest);
   }
 }
