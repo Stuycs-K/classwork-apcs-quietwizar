@@ -19,11 +19,6 @@ public class ArrayDemo{
     System.out.println("Original: [1], Actual: "+ arrToString(test3));
     System.out.println("Original: [1,12], Actual: "+ arrToString(test4));
 
-    System.out.println("Does it match: "+ arraychecker(test1, returnCopy(test1)));
-    System.out.println("Does it match: "+ arraychecker(test2,returnCopy(test2)));
-    System.out.println("Does it match: "+ arraychecker(test3,returnCopy(test3)));
-    System.out.println("Does it match: "+ arraychecker(test4,returnCopy(test4)));
-
     System.out.println("[2, 3, 4, 9] vs" + arrToString(test5));
     System.out.println("Original: [[2, 3, 4], [5, 6, 7], [2, 4, 9]], new: " + arrToString(test6));
     System.out.println("Array sum of [[2, 3, 4], [5, 6, 7], [2, 4, 9]]: "+ arr2DSum(test6));
@@ -39,6 +34,11 @@ public class ArrayDemo{
     System.out.println("Origional: {{},{3,7,-4,6},{12,21},{201,22,-100}}, copy= " + CopyTest + "and the copied string: " + arrToString(test9));
     test9[1][2]=0;
     System.out.println("Check copy chage: " + arrToString(test9) + " vs " + CopyTest);
+
+    System.out.println("Table of [[2,3,4],[5,6,7][2,4,9]]: "+ htmlTable(test6));
+    System.out.println("Table of [[],[3,7,-4,6],[12,21],[201,22,-100]]: "+ htmlTable(test9));
+    System.out.println("Table of [[3,7,4], [2,1], [], [232]]: "+ htmlTable(weirdtest));
+    
 
   }
 
