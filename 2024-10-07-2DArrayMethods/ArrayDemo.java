@@ -165,10 +165,11 @@ public class ArrayDemo{
     for(int i=0; i<nums.length; i++){
       ToHtml+="<tr>";
       for(int j=0; j<nums[i].length; j++){
-        ToHtml+="<td>"+nums[i][j]+"</td>"
+        ToHtml+="<td>"+nums[i][j]+"</td>";
       }
-      ToHtml+="</tr>"
+      ToHtml+="</tr>";
     }
-    return "";
+    ToHtml+="</table>";
+    return ToHtml;
   }
 }
