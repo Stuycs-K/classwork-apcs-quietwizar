@@ -12,6 +12,7 @@ public class ArrayDemo{
     int[][] test7=new int[][]{{1,2,3},{4,5,6}};
     int[][] test8 = new int[][]{{},{-2,-4,-6},{4,-5},{1,4,7,-8}};
     int[][] test9=new int[][]{{},{3,7,-4,6},{12,21},{201,22,-100}};
+    int[][] zerotest=new int[][]{{},{0,0,0},{12,0,11},{11,12,0}};
 
 
     System.out.println("Original: [], Actual: "+ arrToString(test1));
@@ -39,6 +40,7 @@ public class ArrayDemo{
     System.out.println("Table of [[],[3,7,-4,6],[12,21],[201,22,-100]]: "+ htmlTable(test9));
     System.out.println("Table of [[3,7,4], [2,1], [], [232]]: "+ htmlTable(weirdtest));
     
+    System.out.println("Zeros in {{},{0,0,0},{12,0,11},{11,12,0}}: " + countZeros2D(zerotest));
 
   }
 
