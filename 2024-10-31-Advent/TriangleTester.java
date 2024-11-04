@@ -17,4 +17,13 @@ public class TriangleTester{
     }
     return count;
   }
+  public static int countTrianglesB(String filename){
+    File file=new File (filename);
+    Scanner input = new Scanner(file);
+    String[] triangles=input.split("\n");
+    for(int i=0; i<triangles.length; i++){
+      triangles[i].split(" ");
+    }
+     
+  }
 }

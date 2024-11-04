@@ -1,3 +1,8 @@
+//Jai Shah and Raphael Ramot
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 class Main {
     public static void main(String[] args) {
       String text = "This is a sample\nOf how to read\ntext!";
@@ -10,6 +15,6 @@ class Main {
       while(input.hasNext()){
         System.out.println(input.next());
       }
-      countTrianglesA("inputTri.txt");
+      TriangleTester.countTrianglesA("inputTri.txt");
     }
   }
