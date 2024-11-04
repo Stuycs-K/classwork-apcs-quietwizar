@@ -10,5 +10,6 @@ class Main {
       while(input.hasNext()){
         System.out.println(input.next());
       }
+      countTrianglesA("inputTri.txt");
     }
   }
