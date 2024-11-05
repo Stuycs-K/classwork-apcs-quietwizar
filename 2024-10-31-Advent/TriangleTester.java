@@ -7,14 +7,21 @@ public class TriangleTester{
     return((a+b)>c&&(b+c)>a&&(a+c)>b);
   }
   public static int countTrianglesA(String filename){
-    File file=new File (filename);
-    Scanner input = new Scanner(file);
     int count=0;
-    while(input.hasNextLine()){
-      if(trichecker(input.nextInt(),input.nextInt(),input.nextInt())){
-        count++;
+    try{
+      File file=new File (filename);
+      Scanner input = new Scanner(file);
+      while(input.hasNextLine()){
+        if(trichecker(input.nextInt(),input.nextInt(),input.nextInt())){
+          count++;
+        }
       }
+      input.close();
     }
+    catch(FileNotFoundException ex){
+      System.out.println("File not found");
+    }
+    System.out.println(count);
     return count;
   }
   public static int countTrianglesB(String filename){
