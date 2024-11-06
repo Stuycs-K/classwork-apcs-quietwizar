@@ -8,45 +8,53 @@ public class TriangleTester{
   }
   public static int countTrianglesA(String filename){
     int count=0;
+    Scanner input=null;
     try{
       File file=new File (filename);
-      Scanner input = new Scanner(file);
+      input = new Scanner(file);
       while(input.hasNextLine()){
-        if(trichecker(input.nextInt(),input.nextInt(),input.nextInt())){
-          count++;
+        String lines=input.nextLine();
+        String[]linesparts=lines.split("\\s+");//Just learnt that this was whitespace
+        if(linesparts.length==3){
+          if(trichecker(Integer.parseInt(linesparts[0]),Integer.parseInt(linesparts[1]),Integer.parseInt(linesparts[2]))){
+            count++;
+          }
         }
       }
-      input.close();
     }
     catch(FileNotFoundException ex){
       System.out.println("File not found");
     }
-    System.out.println(count);
+    //googled finally because my code wasnt working
+    finally{
+      if(input!=null){
+        input.close();
+      }
+    }
     return count;
   }
   public static int countTrianglesB(String filename){
     int count=0;
+    Scanner input=null;
     try{
       File file=new File (filename);
-      Scanner input = new Scanner(file);
+      input = new Scanner(file);
       while(input.hasNextLine()){
-        if(input.hasNextInt()){
-          int[]row1={input.nextInt(),input.nextInt(),input.nextInt()};
-          int[]row2={input.nextInt(),input.nextInt(),input.nextInt()};
-          int[]row3={input.nextInt(),input.nextInt(),input.nextInt()};
-          for(int i=0; i<3;i++){
-            if(trichecker(row1[i],row2[i],row3[i])){
-              count++;
-            }
-        }
+        String lines1=input.nextLine();
+        String lines2=input.nextLine();
+        String lines3=input.nextLine();
+        count+= countTrianglesA(lines1)+countTrianglesA(lines2)+countTrianglesA(lines3);
       }
-    }
-    input.close(); 
     }
     catch(FileNotFoundException ex){
       System.out.println("File not found");
     }
-    System.out.println(count);
+    //googled finally because my code wasnt working
+    finally{
+      if(input!=null){
+        input.close();
+      }
+    } 
     return count;
   }
 }
