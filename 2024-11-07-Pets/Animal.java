@@ -28,4 +28,6 @@ public class Animal {
   public String getNoise(){
     return noise;
   }
+  
 }
+
