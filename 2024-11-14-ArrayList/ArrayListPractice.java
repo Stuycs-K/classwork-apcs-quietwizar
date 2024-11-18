@@ -31,7 +31,27 @@ public class ArrayListPractice{
   public static ArrayList<String> makeReversedList( ArrayList<String> original){
   //return a new ArrayList that is in the reversed order of the original.
 	ArrayList<String> returnArray = new ArrayList<String>(original.size());
-
+    int count=0;
+    for(int i=original.size()-1;i>=0;i++){
+        returnArray.set(i,count);
+        count++
+    }
 	return returnArray;
   }
+  public static ArrayList<String> mixLists( ArrayList<String> a,  ArrayList<String> b){
+  //return a new ArrayList that has all values of a and b in alternating order that is:
+  //a[0], b[0], a[1], b[1]...
+  //If one list is longer than the other, just attach the remaining values to the end.
+    int larger=a.size();
+    int tracker=0;
+    if(b.size>a.size());{
+        larger=b.size;
+        tracker=1;
+    }
+    ArrayList<String> returnArray = new ArrayList<String>(a.size()+b.size());
+    for (int i=0; i<larger; i++){
+        
+    }
+    return returnArray;
+  } 
 }
