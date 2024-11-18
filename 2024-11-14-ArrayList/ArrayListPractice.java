@@ -21,9 +21,9 @@ public class ArrayListPractice{
 	//Modify the ArrayList such that it has all of the empty strings are
 	//replaced with the word "Empty".
 	for (int i = 0; i < original.size(); i++){
-  	if (original.get(i).equals("")){
-    	original.set(i, "Empty");
-  	}
+  	    if (original.get(i).equals("")){
+    	    original.set(i, "Empty");
+  	    }
 	}
 	System.out.println(original);
   }
@@ -32,9 +32,9 @@ public class ArrayListPractice{
   //return a new ArrayList that is in the reversed order of the original.
 	ArrayList<String> returnArray = new ArrayList<String>(original.size());
     int count=0;
-    for(int i=original.size()-1;i>=0;i++){
-        returnArray.set(i,count);
-        count++
+    for(int i=original.size()-1;i>=0;i--){
+        returnArray.add(original.get(i));
+        count++;
     }
 	return returnArray;
   }
@@ -42,15 +42,16 @@ public class ArrayListPractice{
   //return a new ArrayList that has all values of a and b in alternating order that is:
   //a[0], b[0], a[1], b[1]...
   //If one list is longer than the other, just attach the remaining values to the end.
-    int larger=a.size();
-    int tracker=0;
-    if(b.size>a.size());{
-        larger=b.size;
-        tracker=1;
-    }
+    int larger=Math.max(a.size(),b.size());
     ArrayList<String> returnArray = new ArrayList<String>(a.size()+b.size());
     for (int i=0; i<larger; i++){
-        
+        if(i<a.size()){
+        returnArray.add(a.get(i));
+        }
+        if(i<b.size()){
+            returnArray.add(b.get(i));
+        }
+
     }
     return returnArray;
   } 
