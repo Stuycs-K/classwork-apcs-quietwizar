@@ -15,6 +15,7 @@ class Main {
       while(input.hasNext()){
         System.out.println(input.next());
       }
-      TriangleTester.countTrianglesA("inputTri.txt");
+      System.out.println(TriangleTester.countTrianglesA("inputTri.txt"));
+      System.out.println(TriangleTester.countTrianglesB("inputTri.txt"));
     }
   }

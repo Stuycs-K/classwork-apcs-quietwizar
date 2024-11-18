@@ -7,23 +7,54 @@ public class TriangleTester{
     return((a+b)>c&&(b+c)>a&&(a+c)>b);
   }
   public static int countTrianglesA(String filename){
-    File file=new File (filename);
-    Scanner input = new Scanner(file);
     int count=0;
-    while(input.hasNextLine()){
-      if(trichecker(input.nextInt(),input.nextInt(),input.nextInt())){
-        count++;
+    Scanner input=null;
+    try{
+      File file=new File (filename);
+      input = new Scanner(file);
+      while(input.hasNextLine()){
+        String lines=input.nextLine();
+        String[]linesparts=lines.split("\\s+");//Just learnt that this was whitespace
+        if(linesparts.length==3){
+          if(trichecker(Integer.parseInt(linesparts[0]),Integer.parseInt(linesparts[1]),Integer.parseInt(linesparts[2]))){
+            count++;
+          }
+        }
+      }
+    }
+    catch(FileNotFoundException ex){
+      System.out.println("File not found");
+    }
+    //googled finally because my code wasnt working
+    finally{
+      if(input!=null){
+        input.close();
       }
     }
     return count;
   }
   public static int countTrianglesB(String filename){
-    File file=new File (filename);
-    Scanner input = new Scanner(file);
-    String[] triangles=input.split("\n");
-    for(int i=0; i<triangles.length; i++){
-      triangles[i].split(" ");
+    int count=0;
+    Scanner input=null;
+    try{
+      File file=new File (filename);
+      input = new Scanner(file);
+      while(input.hasNextLine()){
+        String lines1=input.nextLine();
+        String lines2=input.nextLine();
+        String lines3=input.nextLine();
+        count+= countTrianglesA(lines1)+countTrianglesA(lines2)+countTrianglesA(lines3);
+      }
     }
-     
+    catch(FileNotFoundException ex){
+      System.out.println("File not found");
+    }
+    //googled finally because my code wasnt working
+    finally{
+      if(input!=null){
+        input.close();
+      }
+    } 
+    return count;
   }
 }
