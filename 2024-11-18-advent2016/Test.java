@@ -47,6 +47,8 @@ public class Test{
   public static int[] day2(String filename){
     Scanner input=null;
     ArrayList<String> passkey= new ArrayList<String>(4);
+    int [] password=new int[] {0,0,0,0};
+    int[][] code=  {{1,2,3},{4,5,6},{7,8,9}};
     try{
       File file=new File(filename);
       input=new Scanner(file);
@@ -55,10 +57,27 @@ public class Test{
         passkey.add(lines);
       }
       //System.out.println(passkey);
-      
+      for(int i=0; i<passkey.size();i++){
+        int[] tracker={1,1};
+        for(int j=0; j<passkey.get(i).length();j++){
+          if(passkey.get(i).charAt(j)=="U"&&tracker[0]>0){
+            tracker[0]-=1;
+          }
+          if(passkey.get(i).charAt(j)=="L"&&tracker[1]>0){
+            tracker[1]-=1;
+          }
+          if(passkey.get(i).charAt(j)=="R"&&tracker[0]<2){
+            tracker[1]+=1;
+          }
+          if(passkey.get(i).charAt(j)=="D"&&tracker[1]<2){
+            tracker[0]+=1;
+          }
+        }
+        password.append(code[tracker[0]][tracker[1]]);
+      }
     }catch(FileNotFoundException e){
       return null;
     }
-    return null;
+    return password;
   }
   }
