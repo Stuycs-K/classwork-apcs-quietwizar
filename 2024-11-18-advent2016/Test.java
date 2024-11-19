@@ -60,20 +60,20 @@ public class Test{
       for(int i=0; i<passkey.size();i++){
         int[] tracker={1,1};
         for(int j=0; j<passkey.get(i).length();j++){
-          if(passkey.get(i).charAt(j)=="U"&&tracker[0]>0){
+          if(passkey.get(i).charAt(j)=='U'&&tracker[0]>0){
             tracker[0]-=1;
           }
-          if(passkey.get(i).charAt(j)=="L"&&tracker[1]>0){
+          if(passkey.get(i).charAt(j)=='L'&&tracker[1]>0){
             tracker[1]-=1;
           }
-          if(passkey.get(i).charAt(j)=="R"&&tracker[0]<2){
+          if(passkey.get(i).charAt(j)=='R'&&tracker[0]<2){
             tracker[1]+=1;
           }
-          if(passkey.get(i).charAt(j)=="D"&&tracker[1]<2){
+          if(passkey.get(i).charAt(j)=='D'&&tracker[1]<2){
             tracker[0]+=1;
           }
         }
-        password.append(code[tracker[0]][tracker[1]]);
+        password[i]=(code[tracker[0]][tracker[1]]);
       }
     }catch(FileNotFoundException e){
       return null;
