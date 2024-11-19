@@ -35,14 +35,30 @@ public class Test{
           changer[4]=Math.abs(changer[0]-changer[2])+Math.abs(changer[1]-changer[3]);
         }
       }
-      
+
     }
 
       }catch (FileNotFoundException ex) {
         System.out.println("File not found");
-        return null; 
+        return null;
       }
       return changer;
   }
+  public static int[] day2(String filename){
+    Scanner input=null;
+    ArrayList<String> passkey= new ArrayList<String>(4);
+    try{
+      File file=new File(filename);
+      input=new Scanner(file);
+      while(input.hasNextLine()){
+        String lines=input.nextLine();
+        passkey.add(lines);
+      }
+      //System.out.println(passkey);
+      
+    }catch(FileNotFoundException e){
+      return null;
+    }
+    return null;
   }
-
+  }
