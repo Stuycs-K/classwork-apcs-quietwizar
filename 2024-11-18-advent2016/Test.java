@@ -1,38 +1,38 @@
-class Test{
-  public static void pathing(String filename){
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class Test{
+  public static int[] pathing(String filename){
   Scanner input=null;
   int Nord=0;
   int Sud=0;
   int Ost=0;
   int West=0;
+  int[] changer={0,0,0,0};//North South East West
   try{
     File file=new File (filename);
     input = new Scanner(file);
-    ArrayList<String> changer=["Nord","Sud","Ost","West"];
     int holder=0;
     while(input.hasNext()){
       String lines=input.next();
-      if(x.charAt(0)=='R'){
+      if(lines.charAt(0)=='R'){
         holder-=1;
-        if (holder<0){
-          holder=4
-        }
       }
       else{
         holder+=1;
-        if(holder>4){
-          holder=0;
-        }
       }
+      holder=(holder+4)%4;
+      changer[holder]+=Integer.parseInt(lines.substring(1,lines.length()-1));
       
     }
 
       }catch (FileNotFoundException ex) {
-        //File not found what should you do?
         System.out.println("File not found");
-        return; //you can return from a void function just don't put a value.
+        return null; 
       }
+      return changer;
   }
   }
-  public static void main(String[] args)
-}
+
