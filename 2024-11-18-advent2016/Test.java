@@ -32,8 +32,10 @@ public class Test{
       String location=(changer[0]-changer[2])+","+(changer[1]-changer[3]);
       for(int j=0; j<trackkeeper.size();j++){
         if(trackkeeper.get(j).equals(location)){
-          changer[4]=Math.abs(changer[0]-changer[2])+Math.abs(changer[1]-changer[3]);
+          System.out.println(location);
         }
+      trackkeeper.add(location);
+
       }
 
     }
@@ -42,6 +44,7 @@ public class Test{
         System.out.println("File not found");
         return null;
       }
+      System.out.println(trackkeeper);
       return changer;
   }
   public static ArrayList<Integer> day2(String filename){
