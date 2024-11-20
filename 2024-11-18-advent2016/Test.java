@@ -44,10 +44,10 @@ public class Test{
       }
       return changer;
   }
-  public static int[] day2(String filename){
+  public static ArrayList<Integer> day2(String filename){
     Scanner input=null;
     ArrayList<String> passkey= new ArrayList<String>(4);
-    int [] password=new int[] {0,0,0,0};
+    ArrayList<Integer> password=new ArrayList<Integer>(5);
     int[][] code=  {{1,2,3},{4,5,6},{7,8,9}};
     try{
       File file=new File(filename);
@@ -66,14 +66,14 @@ public class Test{
           if(passkey.get(i).charAt(j)=='L'&&tracker[1]>0){
             tracker[1]-=1;
           }
-          if(passkey.get(i).charAt(j)=='R'&&tracker[0]<2){
+          if(passkey.get(i).charAt(j)=='R'&&tracker[1]<2){
             tracker[1]+=1;
           }
-          if(passkey.get(i).charAt(j)=='D'&&tracker[1]<2){
+          if(passkey.get(i).charAt(j)=='D'&&tracker[0]<2){
             tracker[0]+=1;
           }
         }
-        password[i]=(code[tracker[0]][tracker[1]]);
+        password.add(code[tracker[0]][tracker[1]]);
       }
     }catch(FileNotFoundException e){
       return null;
