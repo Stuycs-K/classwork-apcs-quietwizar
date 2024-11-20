@@ -80,4 +80,36 @@ public class Test{
     }
     return password;
   }
+  public static String day6(String filename){
+  Scanner input=null;
+  String answer="";
+  try{
+    File file=new File(filename);
+    input=new Scanner(file);
+    while(input.hasNextLine()){
+      String lines=input.nextLine();
+      lines.replace("-","");
+      char[] linar=lines.toCharArray();
+      int[] frq=new int[26];
+      for(int i=0; i<linar.length();i++){
+        if(linar[i]>='a' && linar[i]<='z'){
+          frequency[(int)(linar[i]-'a')]+=1;
+        }
+      }
+      int max=0;
+      int maxindex=0;
+      for(int j=0; j<frequency.length();j++){
+        if(max<frequency[j]){
+          max=frequency[j];
+          maxindex=j;
+        }
+      }
+      answer=answer+(((char)j)+'a');
+    }
+
+  }catch(FileNotFoundException e){
+    return null;
   }
+  return answer;
+  }
+}
