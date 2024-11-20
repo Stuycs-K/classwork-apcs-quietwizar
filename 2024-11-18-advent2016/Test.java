@@ -97,10 +97,10 @@ public class Test{
       for(int j=0; j<line.size();j++){
         frq[(int)(line.get(j).charAt(i)-'a')]+=1;
       }
-      int max=0;
+      int max=(int)Math.pow(10,10);//change to zero normally
       int maxindex=0;
       for(int k=0; k<frq.length;k++){
-        if(max<frq[k]){
+        if(max>frq[k]&&frq[k]>0){//get rid of the add and change max to < to fix it
           max=frq[k];
           maxindex=k;
         }
