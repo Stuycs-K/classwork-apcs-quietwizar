@@ -86,25 +86,26 @@ public class Test{
   try{
     File file=new File(filename);
     input=new Scanner(file);
+    ArrayList<String> line=new ArrayList<String>();
     while(input.hasNextLine()){
       String lines=input.nextLine();
-      lines.replace("-","");
-      char[] linar=lines.toCharArray();
+      line.add(lines);
+    }
+    int linelength=line.get(0).length();
+    for(int i=0; i<linelength;i++){
       int[] frq=new int[26];
-      for(int i=0; i<linar.length();i++){
-        if(linar[i]>='a' && linar[i]<='z'){
-          frequency[(int)(linar[i]-'a')]+=1;
-        }
+      for(int j=0; j<line.size();j++){
+        frq[(int)(line.get(j).charAt(i)-'a')]+=1;
       }
       int max=0;
       int maxindex=0;
-      for(int j=0; j<frequency.length();j++){
-        if(max<frequency[j]){
-          max=frequency[j];
-          maxindex=j;
+      for(int k=0; k<frq.length;k++){
+        if(max<frq[k]){
+          max=frq[k];
+          maxindex=k;
         }
       }
-      answer=answer+(((char)j)+'a');
+      answer=answer+(char)(maxindex +'a');
     }
 
   }catch(FileNotFoundException e){
