@@ -6,7 +6,8 @@ public class ColorDemo{
           System.out.print("\u001b[38;2;"+r+";"+g+";"+b+";7m.");
         }
       }
-    System.out.println();
+      System.out.print("\u001b[?25l");
+      System.out.println();
     }
   }
 }
