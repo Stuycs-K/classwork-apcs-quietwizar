@@ -7,17 +7,24 @@ public class ColorDemo{
       try{
               Thread.sleep(milli);
       }catch(Exception e){
-      }
+    }
   }
   public static final String RESET="\u001b[0m";
   public static void main(String[] args){
     Random rand=new Random();
     int randInt=rand.nextInt(257);
-    for(int i=0;i<256;i++){
+    for(int i=0;i<257;i++){
       int randInt1=rand.nextInt(257);
       int randInt2=rand.nextInt(257);
       int randInt3=rand.nextInt(257);
       color(randInt1,randInt2,randInt3);
+      if(i%16==0&&i!=0){
+        int randInt4=rand.nextInt(9);
+        randInt4+=30;
+        System.out.print("\u001b[0"+randInt4+"m");
+        System.out.print("A 16 reached!");
+      }
+      sleep(10);
     }
     System.out.print("\u001b[?25l");
     System.out.println();
