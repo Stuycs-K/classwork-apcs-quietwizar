@@ -38,8 +38,8 @@ public class Driver{
             count+=1;
         }
         Text.wait(40);
-        Text.go(3,1);
-        topborder(80,"H",Text.BLUE);
+        Text.go(3,2);
+        topborder(78,"H",Text.BLUE);
         Text.go(20,40);
         System.out.print("X");
         Text.go(21,39);
