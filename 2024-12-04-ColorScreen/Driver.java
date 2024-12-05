@@ -8,6 +8,7 @@ public class Driver{
     }
     public static void main(String[] args){
         System.out.print(Text.HIDE_CURSOR);
+        System.out.print(Text.CLEAR_SCREEN);
         Text.go(1,0);
         topborder(80,"+",Text.RED);
         Text.go(30,0);
@@ -22,7 +23,7 @@ public class Driver{
         Random rand=new Random();
         int[] made=new int[]{rand.nextInt(100),rand.nextInt(100),rand.nextInt(100)};
         int count=0;
-        for(int j=30;j<80;j+=20){
+        for(int j=20;j<70;j+=20){
             Text.go(2,j);
             if(made[count]<25){
                 Text.color(Text.RED,Text.BRIGHT);
@@ -48,7 +49,18 @@ public class Driver{
         Text.go(19,39);
         System.out.print("X");
         Text.go(19,41);
-        System.out.print("X");       
+        System.out.print("X");
+        Text.go(18,42);
+        System.out.print("X");
+        Text.go(18,38);
+        System.out.print("X");
+        Text.go(22,42);
+        System.out.print("X");
+        Text.go(22,38);
+        System.out.print("X");
+        
+        Text.go(31,0);
+        
         System.out.println(Text.RESET);
     }
 }
