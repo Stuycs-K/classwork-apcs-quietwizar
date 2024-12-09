@@ -1,7 +1,18 @@
 import java.util.Random;
 public abstract class Berserker extends Adventurer{
   private String name;
-  private int HP,maxHP;
+  private int HP,maxHP,special;
+  private int specialMax=4;
+
+  public Berserker(String name){
+    this(name, 10);
+  }
+
+  public Berserker(String name, int hp){
+      super(name);
+      this.HP = hp;
+      this.maxHP = hp;
+  }
 
   public String getSpecialName(){
     return "Rage";
@@ -19,7 +30,7 @@ public abstract class Berserker extends Adventurer{
   //hurt or hinder the target adventurer
   public String attack(Adventurer other){
     other.applyDamage(15);
-    this.setSpecial(this.getspecial()+1)
+    this.setSpecial(this.getSpecial()+1);
     return("The Berserker "+this.getName()+" hit "+other.getName()+" for 15 dmg");
   }
 
@@ -30,9 +41,9 @@ public abstract class Berserker extends Adventurer{
   }
 
   //heall or buff self
-  public abstract support(){
+  public String support(){
     this.setHP(this.getHP()+10);
-    return(return("Berserker "+this.getName()+" healed 10 hp");
+    return("Berserker "+this.getName()+" healed 10 hp");
   }
 
   //hurt or hinder the target adventurer, consume some special resource
