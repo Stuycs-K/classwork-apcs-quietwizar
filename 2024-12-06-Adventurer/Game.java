@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Random;
 class Game {
   public static void main(String[] args) {
     Scanner userInput = new Scanner(System.in);
@@ -9,7 +10,7 @@ class Game {
     System.out.println("Name is: " + userName);
     Adventurer player=new CodeWarrior(userName, 100);
     Adventurer enemy=new Berserker("Neighborhood Berserker", 100);
-    breaker=true;
+    boolean breaker=true;
     while(player.getHP()>0 &&  enemy.getHP()>0 && breaker){
       System.out.println(player.getName()+ ","+player.getHP()+"/"+player.getmaxHP()" HP,"+player.getSpecial()+"/"+player.getSpecialMax()+" "+player.getSpecialName());
       System.out.println(enemy.getName()+ ","+enemy.getHP()+"/"+enemy.getmaxHP()" HP,"+enemy.getSpecial()+"/"+enemy.getSpecialMax()+" "+enemy.getSpecialName());
@@ -18,7 +19,36 @@ class Game {
       if(newinput.equals("quit")){
         breaker=false;
       }
-      if(newinput)
+      else if(newinput.equals("a")){
+        player.attack(enemy);
+      }
+      else if(newinput.equals("sp")){
+        player.special(enemy);
+      }
+      else if(newinput.equals("su")){
+        player.support(player);
+      }
+      else{
+        System.out.println("You failed to do anything!")
+      }
+      if(breaker && enemy.getHP()>0){
+        int randInt=rand.nextInt(3);
+        int mod=randInt%3;
+        if(mod==0){
+          enemy.attack(player);
+        }
+        if(mod==1){
+          enemy.specialAttack(player);
+        }
+        if(mod==2){
+          enemy.support(enemy);
+        }
+      }
+    }
+    if(player.getHP()<=0){
+      System.out.println("You Lose!");
+    if(enemy.getHP()<=0){
+      System.out.println("You Win!");
     }
   }
 }
