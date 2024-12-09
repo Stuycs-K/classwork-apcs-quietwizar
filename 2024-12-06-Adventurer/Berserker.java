@@ -44,6 +44,9 @@ public class Berserker extends Adventurer{
   //heall or buff self
   public String support(){
     this.setHP(this.getHP()+10);
+    if(this.getHP()>this.getmaxHP()){
+      this.setHP(this.getmaxHP());
+    }
     return("Berserker "+this.getName()+" healed 10 hp");
   }
 
