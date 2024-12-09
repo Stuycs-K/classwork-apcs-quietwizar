@@ -1,7 +1,6 @@
 import java.util.Random;
-public abstract class Berserker extends Adventurer{
-  private String name;
-  private int HP,maxHP,special;
+public class Berserker extends Adventurer{
+  private int special;
   private int specialMax=4;
 
   public Berserker(String name){
@@ -9,9 +8,7 @@ public abstract class Berserker extends Adventurer{
   }
 
   public Berserker(String name, int hp){
-      super(name);
-      this.HP = hp;
-      this.maxHP = hp;
+      super(name, hp);
   }
 
   public String getSpecialName(){
@@ -27,16 +24,20 @@ public abstract class Berserker extends Adventurer{
   public int getSpecialMax(){
     return specialMax;
   }
+  
   //hurt or hinder the target adventurer
   public String attack(Adventurer other){
     other.applyDamage(15);
-    this.setSpecial(this.getSpecial()+1);
+    super.restoreSpecial(1);
     return("The Berserker "+this.getName()+" hit "+other.getName()+" for 15 dmg");
   }
 
   //heall or buff the target adventurer
   public String support(Adventurer other){
     other.setHP(other.getHP()+10);
+    if(other.getHP()>other.getmaxHP()){
+      other.setHP(other.getmaxHP());
+    }
     return("Berserker "+this.getName()+" healed "+ other.getName()+ " for 10 hp");
   }
 
@@ -53,37 +54,12 @@ public abstract class Berserker extends Adventurer{
     return("Berserker "+this.getName()+" raged and did 40 dmg to " + other.getName());
   }
   public void applyDamage(int amount){
-    this.HP -= amount;
+    super.applyDamage(amount);
   }
 
   //toString method
   public String toString(){
     return this.getName();
-  }
-
-  //Get Methods
-  public String getName(){
-    return name;
-  }
-
-  public int getHP(){
-      return HP;
-  }
-
-  public int getmaxHP(){
-      return maxHP;
-  }
-  public void setmaxHP(int newMax){
-        maxHP = newMax;
-  }
-
-  //Set Methods
-  public void setHP(int health){
-      this.HP = health;
-  }
-
-  public void setName(String s){
-      this.name = s;
   }
 
 }
