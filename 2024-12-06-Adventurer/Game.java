@@ -20,13 +20,13 @@ class Game {
         breaker=false;
       }
       else if(newinput.equals("a")){
-        player.attack(enemy);
+        System.out.println(player.attack(enemy));
       }
       else if(newinput.equals("sp")){
-        player.specialAttack(enemy);
+        System.out.println(player.specialAttack(enemy));
       }
       else if(newinput.equals("su")){
-        player.support(player);
+        System.out.println(player.support(player));
       }
       else{
         System.out.println("You failed to do anything!");
@@ -36,21 +36,21 @@ class Game {
         int randInt=rand.nextInt(3);
         int mod=randInt%3;
         if(mod==0){
-          enemy.attack(player);
+          System.out.println(enemy.attack(player));
         }
         if(mod==1){
-          enemy.specialAttack(player);
+          System.out.println(enemy.specialAttack(player));
         }
         if(mod==2){
-          enemy.support(enemy);
+          System.out.println(enemy.support(enemy));
         }
       }
     }
     if(player.getHP()<=0){
-      System.out.println("You Lose!");
+      System.out.println("You Lose! The Neighborhood Berserker has Triumphed");
     }
     if(enemy.getHP()<=0){
-      System.out.println("You Win!");
+      System.out.println("You Win! The Berserker is vanquished");
     }
     userInput.close();
 

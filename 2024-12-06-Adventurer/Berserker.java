@@ -28,9 +28,10 @@ public class Berserker extends Adventurer{
   //hurt or hinder the target adventurer
   public String attack(Adventurer other){
     Random rand= new Random();
-    other.applyDamage(rand.randInt(7)+13);
+    int dmg=rand.nextInt(7)+13;
+    other.applyDamage(dmg);
     super.restoreSpecial(1);
-    return("The Berserker "+this.getName()+" hit "+other.getName()+" for 15 dmg");
+    return("The Berserker "+this+" hit "+other.getName()+" for "+dmg+" dmg");
   }
 
   //heall or buff the target adventurer
@@ -39,7 +40,7 @@ public class Berserker extends Adventurer{
     if(other.getHP()>other.getmaxHP()){
       other.setHP(other.getmaxHP());
     }
-    return("Berserker "+this.getName()+" healed "+ other.getName()+ " for 10 hp");
+    return("Berserker "+this+" healed "+ other.getName()+ " for 10 hp");
   }
 
   //heall or buff self
@@ -48,14 +49,19 @@ public class Berserker extends Adventurer{
     if(this.getHP()>this.getmaxHP()){
       this.setHP(this.getmaxHP());
     }
-    return("Berserker "+this.getName()+" healed 10 hp");
+    return("Berserker "+this+" healed 10 hp");
   }
 
   //hurt or hinder the target adventurer, consume some special resource
   public String specialAttack(Adventurer other){
-    other.applyDamage(40);
+    if(this.getSpecial()<4){
+      return "Not enough power!";
+    }
+    Random rand= new Random();
+    int dmg=30+rand.nextInt(10);
+    other.applyDamage(dmg);
     this.setSpecial(0);
-    return("Berserker "+this.getName()+" raged and did 40 dmg to " + other.getName());
+    return("Berserker "+this+" raged and did "+dmg+" dmg to " + other.getName());
   }
   public void applyDamage(int amount){
     super.applyDamage(amount);
