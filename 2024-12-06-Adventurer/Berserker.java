@@ -27,7 +27,8 @@ public class Berserker extends Adventurer{
   
   //hurt or hinder the target adventurer
   public String attack(Adventurer other){
-    other.applyDamage(15);
+    Random rand= new Random();
+    other.applyDamage(rand.randInt(7)+13);
     super.restoreSpecial(1);
     return("The Berserker "+this.getName()+" hit "+other.getName()+" for 15 dmg");
   }
