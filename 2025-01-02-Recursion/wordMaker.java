@@ -1,13 +1,15 @@
 public class wordMaker{
   public static void makeWords(int remainingLetters,String result, String alphabet){
     if(remainingLetters>0){
-      makeWords(remainingLetters-1,result+=alphabet.substring(1,2), alphabet);
+      for(int i=0;i<alphabet.length();i++){
+        makeWords(remainingLetters-1,result+alphabet.substring(i,i+1), alphabet);
+      }
     }
     else{
-      print result;
+      System.out.println (result);
     }
   }
-  public static void main(Strings[] args){
-    makeWords(3,"","abc")
+  public static void main(String[] args){
+    makeWords(2,"","abc");
   }
 }

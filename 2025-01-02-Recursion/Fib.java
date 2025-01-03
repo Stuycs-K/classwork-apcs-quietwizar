@@ -10,7 +10,7 @@ public class fib{
       return(fibonacci(n-1)+fibonacci(n-2));
     }
   }
-  public static void main(Strings[] args){
+  public static void main(String[] args){
     System.out.println(fib(4));
   }
 }
